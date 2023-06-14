@@ -85,6 +85,9 @@ public class OpenAiClient {
             return chain.proceed(request);
         });
 
+        httpClientBuilder.readTimeout(Duration.ofSeconds(60);
+            
+
         // Add HttpLogging interceptor
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(LOG::debug);
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -97,7 +100,7 @@ public class OpenAiClient {
         // Used for automatic discovery and registration of Jackson modules
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.findAndRegisterModules();
-
+    
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(openaiApiBase)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
