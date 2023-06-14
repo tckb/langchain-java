@@ -85,7 +85,7 @@ public class OpenAiClient {
             return chain.proceed(request);
         });
 
-        httpClientBuilder.readTimeout(Duration.ofSeconds(60);
+        httpClientBuilder.readTimeout(Duration.ofSeconds(60));
             
 
         // Add HttpLogging interceptor
